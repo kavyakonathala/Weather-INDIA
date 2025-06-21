@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary-bg: rgba(255, 255, 255, 0.1);
+  --primary-text: white;
+  --card-bg: rgba(0, 0, 0, 0.2);
+}
+.dark {
+  --primary-bg: rgba(0, 0, 0, 0.3);
+  --primary-text: white;
+  --card-bg: rgba(0, 0, 0, 0.4);
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 0.8s ease-in-out, color 0.3s ease;
+  color: var(--primary-text);
+  min-height: 100vh;
+}
+.weather-card {
+  background: var(--primary-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.forecast-card {
+  background: var(--card-bg);
+}
+
+/* Dynamic weather backgrounds */
+.clear-sky {
+  background-image: url('https://images.unsplash.com/photo-1501973801540-537f08ccae7d?auto=format&fit=crop&w=1600&q=80');
+}
+.clouds {
+  background-image: url('https://images.unsplash.com/photo-1499346030926-9a72daac6c63?auto=format&fit=crop&w=1600&q=80');
+}
+.rain {
+  background-image: url('https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=1600&q=80');
+}
+.thunderstorm {
+  background-image: url('https://images.unsplash.com/photo-1598387992830-e3fef188f9b5?auto=format&fit=crop&w=1600&q=80');
+}
+.snow {
+  background-image: url('https://images.unsplash.com/photo-1608889175113-e0d94b1b312c?auto=format&fit=crop&w=1600&q=80');
+}
+.default-bg {
+  background-image: url('https://images.unsplash.com/photo-1498928715928-e942f6035b29?auto=format&fit=crop&w=1600&q=80');
+}

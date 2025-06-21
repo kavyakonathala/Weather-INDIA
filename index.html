@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WeatherCast Pro</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://kit.fontawesome.com/a15b8186cb.js" crossorigin="anonymous"></script>
+</head>
+<body class="min-h-screen flex items-center justify-center px-4 py-8">
+  <div class="max-w-4xl w-full">
+    <div class="weather-card rounded-3xl shadow-xl p-8 relative">
+      <!-- Theme Toggle -->
+      <button id="theme-toggle" class="absolute top-5 right-5 p-2 rounded-full hover:bg-white hover:bg-opacity-20">
+        <i id="theme-icon" class="fas fa-moon text-xl"></i>
+      </button>
+
+      <h1 class="text-3xl font-bold mb-4 flex items-center gap-2">
+        <i class="fas fa-cloud-sun text-yellow-300"></i> Weather India
+      </h1>
+
+      <!-- Search & Location -->
+      <div class="flex flex-col sm:flex-row gap-4 mb-6">
+        <form id="search-form" class="flex-1 flex gap-2">
+          <input type="text" id="search-input" placeholder="Enter city name"
+            class="flex-1 px-4 py-2 rounded-full bg-white bg-opacity-20 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            required />
+          <button type="submit" class="px-4 py-2 bg-blue-500 rounded-full hover:bg-blue-600 transition">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
+        <button id="locate-me" class="px-4 py-2 rounded-full bg-gray-600 hover:bg-gray-700 transition flex items-center gap-2">
+          <i class="fas fa-location-arrow"></i> My Location
+        </button>
+      </div>
+
+      <!-- Current Weather -->
+      <div class="flex flex-col md:flex-row justify-between mb-8 gap-4" id="current-weather">
+        <div class="text-center md:text-left flex-1">
+          <div class="flex items-center justify-center md:justify-start gap-2">
+            <h2 class="text-2xl font-semibold" id="city">Enter a city</h2>
+            <span id="loading-icon" class="animate-spin hidden"><i class="fas fa-circle-notch"></i></span>
+          </div>
+          <p class="text-gray-300" id="date">--</p>
+          <div class="flex items-center justify-center md:justify-start mt-2 gap-2">
+            <img id="weather-icon" src="https://openweathermap.org/img/wn/01d@2x.png" alt="Weather icon" width="60" />
+            <span class="text-5xl font-bold" id="temperature">--°C</span>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 flex-1">
+          <div class="forecast-card p-3 rounded-lg"><p class="text-gray-300">Humidity</p><p class="text-xl font-semibold" id="humidity">--%</p></div>
+          <div class="forecast-card p-3 rounded-lg"><p class="text-gray-300">Wind</p><p class="text-xl font-semibold" id="wind">-- m/s</p></div>
+          <div class="forecast-card p-3 rounded-lg"><p class="text-gray-300">Condition</p><p class="text-xl font-semibold" id="condition">--</p></div>
+          <div class="forecast-card p-3 rounded-lg"><p class="text-gray-300">Feels Like</p><p class="text-xl font-semibold" id="feels-like">--°C</p></div>
+        </div>
+      </div>
+
+      <!-- Forecast -->
+      <h3 class="text-xl font-semibold mb-2">5-Day Forecast</h3>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4" id="forecast-container"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
